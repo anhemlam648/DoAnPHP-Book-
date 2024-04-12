@@ -1,5 +1,29 @@
-Nhóm 13 thành viên bao gồm:
-1. Vũ Trung Nghĩa    MASSV:2011063715  20DTHA5
-2. Nguyễn Trần Hòa   MASSV:2011065161  20DTHA5	
-3. Lê Văn Quý        MASSV:2011064988  20DTHA5
-4. Lê Mạnh Tuấn      MASSV:2011065057  20DTHA5
+# Lê Văn Quý
+
+- ### Năm sinh: 01/01/2002
+
+- ### SĐT : 0332207732
+- ### Nơi ở : Thủ Đức
+
+---
+## Table of Contents-
+
+- [Facebook](#Facebook)
+- [Học vấn](#Họcvấn)
+- [Sở thích](#sởthich)
+---
+## Facebook
+[![Project Image](https://banghieuminhkhang.com/upload/Thu-vien/logo-facebook-vector-11.jpg)](https://www.facebook.com/lequy3322/)
+---
+## Học vấn
+### Từ 2020-2024
+### Học tại : Trường Đại Học Công Nghệ TP.HCM
+### Khoa Công Nghệ Thông Tin
+### Chuyên Ngành Công nghệ phần mền
+
+---
+## Sở thích
+### Xem phim
+### Đọc sách
+### Đi du lịch
+### Xem các thông tin công nghệ mới
