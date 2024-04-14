@@ -1,35 +1,42 @@
-# Nhóm 13
+# Hồ sơ cá nhân
 
-Thành viên:
+## Giới thiệu
 
-1. **Vũ Trung Nghĩa**  
-   - MASSV: 2011063715  
-   - Lớp: 20DTHA5  
+- Xin chào!
+- Tôi là: Lê Mạnh Tuấn.
+- Sinh nhật: 04/09/2001
+- Địa chỉ: 65 Đường số 2, Phường Tăng Nhơn Phú B, Thành phố Thủ Đức
 
-2. **Nguyễn Trần Hòa**  
-   - MASSV: 2011065161  
-   - Lớp: 20DTHA5  
+## Kỹ năng
 
-3. **Lê Văn Quý**  
-   - MASSV: 2011064988  
-   - Lớp: 20DTHA5  
+- Kỹ năng giao tiếp
+- Kỹ quản lý thời gian
+- Kỹ năng làm việc nhóm
 
-4. **Lê Mạnh Tuấn**  
-   - MASSV: 2011065057  
-   - Lớp: 20DTHA5  
+## Dự án
 
-## Vũ Trung Nghĩa
+### Hệ thống quản lý học viên
 
-### Nhà phát triển WEB
+- Hệ thống cho phép các trung tâm đào tạo quản lý thông tin của học viên, cũng như là kết quả học tập của học viên trong hệ thống, giúp đánh giá, phân loại, xếp hạng học viên, cung cấp giải pháp toàn diện và tin học hóa cho các đơn vị đào tạo.
 
-#### Ngôn ngữ
+### Hệ thống bán sách
 
-🎓 [Java] |  [JavaScript (include Node.js)]
+- Hệ thống bán sách là một hệ thống phần mềm được sử dụng để quản lý quy trình bán sách trong một cửa hàng sách trực tuyến hoặc cửa hàng sách vật lý.
 
-#### Công cụ
+### Ứng dụng đọc truyện
 
-🌐 [GitHub] | 🐳 [Docker] | ☁️ [Azure] | ![Postman] | 📜 [UML] | 📜[ClassDiagram]
+- Ứng dụng đọc truyện là một ứng dụng phần mềm được thiết kế để cung cấp trải nghiệm đọc truyện trực tuyến trên các thiết bị di động hoặc máy tính cá nhân.
 
-### Học vấn và Chứng chỉ
+## Sở thích
 
-📜 [Chứng chỉ CEFR B1] | 📜 [Chứng chỉ sinh viên 5 tốt]
+- Lập trình
+- Xem phim
+- Nghe nhạc
+- Du lịch
+- Học ngoại ngữ
+
+## Liên hệ
+
+- Số điện thoại: 0868389770
+- Email: kium480@gmail.com
+- Facebook: https://www.facebook.com/Sigourney01/
