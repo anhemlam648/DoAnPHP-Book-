@@ -81,10 +81,8 @@ class RoleModel {
         public function getRolesWithRoleIdOne()
         {
             session_start();
-            // Lấy id của người dùng từ phiên hoặc nguồn dữ liệu khác
-            $userId = $_SESSION['user_id']; // Ví dụ: Lấy từ phiên
-            // Hoặc: $userId = $otherDataSource->getUserId();
-        
+            //lấy id từ phiên
+            $userId = $_SESSION['user_id']; // Lấy id người dùng từ phiên
             $query = "SELECT * FROM user_roles 
                       LEFT JOIN roles ON user_roles.role_id = roles.role_id 
                       WHERE user_id = $userId AND roles.role_name = 'ADMIN'";
