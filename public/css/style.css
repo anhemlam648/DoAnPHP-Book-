@@ -76,3 +76,30 @@ h2 {
 body {
     margin: 0;
 }
+.pagination {
+    text-align: center; 
+    margin-top: 15px;
+    margin-bottom: 20px; /* Khoảng cách giữa phân trang và danh sách truyện */
+}
+.pagination a {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #3498db;
+    color: #fff; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    transition: background-color 0.3s; 
+    margin: 0 3px; /* Khoảng cách giữa các nút */
+}
+
+.pagination a.current {
+    background-color: #2980b9;
+}
+
+.pagination a:hover {
+    background-color: #2980b9; 
+}
+
+.pagination div {
+    display: inline-block; 
+}

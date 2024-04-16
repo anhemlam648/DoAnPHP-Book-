@@ -132,12 +132,37 @@ public function deleteStory($id) {
 //             $contentsList = $result->fetch_all(MYSQLI_ASSOC);
 //             return $contentsList;
 //         }
+            //Phân trang truyện
+            public function getStoriesPerPage($offset, $limit)
+            {
+                $query = "SELECT * FROM stories LIMIT $offset, $limit";
+                $result = $this->db->conn->query($query);
+
+                if ($result === false) {
+                    // Xử lý lỗi truy vấn
+                    die("Query failed: " . $this->db->conn->error);
+                }
+
+                $stories = [];
+                while ($row = $result->fetch_assoc()) {
+                    $stories[] = $row;
+                }
+
+                return $stories;
+            }
+
+        //Tổng số truyện
+        public function getTotalStories() {
+            $query = "SELECT COUNT(*) as total FROM stories";
+            $result = $this->db->conn->query($query);
+            $row = $result->fetch_assoc();
+            return $row['total'];
+        }
 }
 
 // Sử dụng
 $storyModel = new StoryModel();
 $allStories = $storyModel->getAllStories();
-
 // In ra để kiểm tra
 // print_r($allStories);
 ?>

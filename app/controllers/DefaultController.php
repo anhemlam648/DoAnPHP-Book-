@@ -5,18 +5,47 @@ require_once('C:/xampp/php/www/webdoctruyen/app/controllers/CommentController.ph
 require_once('C:/xampp/php/www/webdoctruyen/app/models/UserModel.php');
 class DefaultController
 {
-    public function home(){
-        include_once '/xampp/php/www/webdoctruyen/app/views/user/index.php';
-    }
+    // public function home(){
+    //     include_once '/xampp/php/www/webdoctruyen/app/views/user/index.php';
+    // }
+    // public function index()
+    // {
+    //     $storyModel = new StoryModel();
+    //     $allStories = $storyModel->getAllStories();
+    
+    //     echo '<h2>Danh sách truyện</h2>';
+    //     echo '<div class="story-container">'; 
+    
+    //     foreach ($allStories as $story) {
+    //         echo '<div class="story">';
+    //         if (!empty($story['image'])) {
+    //             $imageData = base64_encode(file_get_contents($story['image']));
+    //             $src = 'data:' . mime_content_type($story['image']) . ';base64,' . $imageData;
+    
+    //             echo '<img src="' . $src . '" alt="' . $story['title'] . '">';
+    //         }
+    //         echo '<h3 class="story-title">' . $story['title'] . '</h3>';
+    //         echo '<p class="story-author">Tác giả: ' . $story['author'] . '</p>';
+    //         echo '<a class="read-more-link" href="/app/views/user/story.php?id=' . $story['id'] . '">Đọc thêm</a>';
+    //         echo '</div>';
+    //     }
+    
+    //     echo '</div>'; 
+    // }
     public function index()
     {
         $storyModel = new StoryModel();
-        $allStories = $storyModel->getAllStories();
+        //phân trang
+        $limit = 6;
+        $page = isset($_GET['page']) ? $_GET['page'] : 1; // Lấy giá trị của biến $page từ yêu cầu HTTP
+        $offset = ($page - 1) * $limit;
+        $allStories = $storyModel->getStoriesPerPage($offset, $limit);
     
+        // Hiển thị danh sách truyện
         echo '<h2>Danh sách truyện</h2>';
-        echo '<div class="story-container">'; 
-    
+        echo '<div class="story-container">';
         foreach ($allStories as $story) {
+
             echo '<div class="story">';
             if (!empty($story['image'])) {
                 $imageData = base64_encode(file_get_contents($story['image']));
@@ -29,10 +58,37 @@ class DefaultController
             echo '<a class="read-more-link" href="/app/views/user/story.php?id=' . $story['id'] . '">Đọc thêm</a>';
             echo '</div>';
         }
-    
-        echo '</div>'; 
-    }
+        echo '</div>';
+        // Nút phân trang
+        echo '<div class="pagination">';
+        // Số trang
+        $totalPages = ceil($storyModel->getTotalStories() / $limit);
+        // for ($i = 1; $i <= $totalPages; $i++) {
+        //     echo '<a href="?page=' . $i . '">' . $i . '</a>';
+        // }
+        
+        // Nút Previous
+        if ($page > 1) {
+            $previousPage = $page - 1;
+            echo '<a href="?page=' . $previousPage . '">Previous</a>';
+        }
 
+        // Các nút trang
+        for ($i = 1; $i <= $totalPages; $i++) {
+            if ($i == $page) {
+                echo '<a href="?page=' . $i . '" class="current">' . $i . '</a>'; // Trang hiện tại được đánh dấu
+            } else {
+                echo '<a href="?page=' . $i . '">' . $i . '</a>';
+            }
+        }
+
+        // Nút Next
+        if ($page < $totalPages) {
+            $nextPage = $page + 1;
+            echo '<a href="?page=' . $nextPage . '">Next</a>';
+        }
+        echo '</div>';
+    }
     public function showStoryDetails($storyId)
     {
         $storyModel = new StoryModel();
