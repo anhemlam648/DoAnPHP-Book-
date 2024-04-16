@@ -65,18 +65,38 @@ class RoleModel {
 //         $rolesList = $result->fetch_all(MYSQLI_ASSOC);
 //         return $rolesList;
 //     }
+        // public function getRolesWithRoleIdOne()
+        // {
+        //     $query = "SELECT * FROM user_roles WHERE role_id = 1 AND role_id != 2 LIMIT 1";
+        //     $result = $this->db->conn->query($query);
+
+        //     if ($result === false) {
+        //         // Xử lý lỗi truy vấn
+        //         die("Query failed: " . $this->db->conn->error);
+        //     }
+
+        //     $user = $result->fetch_assoc(); 
+        //     return $user;
+        // }
         public function getRolesWithRoleIdOne()
         {
-            $query = "SELECT * FROM user_roles WHERE role_id = 1 AND role_id != 2 LIMIT 1";
+            session_start();
+            // Lấy id của người dùng từ phiên hoặc nguồn dữ liệu khác
+            $userId = $_SESSION['user_id']; // Ví dụ: Lấy từ phiên
+            // Hoặc: $userId = $otherDataSource->getUserId();
+        
+            $query = "SELECT * FROM user_roles 
+                      LEFT JOIN roles ON user_roles.role_id = roles.role_id 
+                      WHERE user_id = $userId AND roles.role_name = 'ADMIN'";
             $result = $this->db->conn->query($query);
-
+        
             if ($result === false) {
                 // Xử lý lỗi truy vấn
                 die("Query failed: " . $this->db->conn->error);
             }
-
-            $user = $result->fetch_assoc(); 
-            return $user;
+        
+            $rolesList = $result->fetch_all(MYSQLI_ASSOC);
+            return $rolesList;
         }
 }
 // Sử dụng
