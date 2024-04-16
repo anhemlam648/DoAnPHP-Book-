@@ -64,20 +64,24 @@
 /* Style cho phần bình luận */
 .comment-section {
     margin-top: 20px;
-    text-align: center; /* Canh giữa nội dung */
+    text-align: center;
 }
 
 .comment-form {
     display: flex;
-    justify-content: center; /* Canh giữa các phần tử bên trong */
+    justify-content: center;
+    align-items: center;
     margin-bottom: 10px;
 }
 
 .comment-form textarea {
-    padding: 5px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-right: 10px;
+    width: 70%;
+    max-width: 400px; /* Điều chỉnh chiều rộng tối đa của textarea */
+    resize: none; /* Không cho phép điều chỉnh kích thước */
 }
 
 .comment-form button {
@@ -85,31 +89,47 @@
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 5px 10px; /* Điều chỉnh kích thước của nút gửi */
+    padding: 10px 20px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .comment-form button:hover {
-    background-color: #3498db;
+    background-color: #2980b9; /* Màu nền khi di chuột qua */
 }
 
 .comment-list {
     margin-top: 20px;
     display: flex;
-    flex-direction: column; /* Hiển thị các phần tử con dọc xuống */
-    align-items: center; /* Canh giữa các phần tử con */
+    flex-direction: column;
+    align-items: center;
 }
 
 .comment {
     background-color: #f9f9f9;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
-    width: 70%; 
-    max-width: 500px;
-     /* Giới hạn chiều rộng tối đa của phần tử .comment */
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng bóng đổ */
+    transition: box-shadow 0.3s; /* Thêm hiệu ứng khi di chuột qua */
 }
+
+.comment:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng đổ khi di chuột qua */
+}
+
+.comment p {
+    margin: 0;
+    color: #333; /* Màu chữ đậm */
+}
+
+.comment p strong {
+    color: #3498db; /* Màu chữ đậm nhưng nổi bật hơn */
+}
+
 .no-comments {
-    text-align: center; /* Canh giữa nội dung */
-    color: #999; /* Màu chữ xám nhạt */
+    text-align: center;
+    color: #999;
 }
